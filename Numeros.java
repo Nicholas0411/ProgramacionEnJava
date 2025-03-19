@@ -1,7 +1,9 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
 public class Numeros {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Números del 1 al 100 (while):");
         int i = 1;
         while (i <= 100) {
@@ -22,11 +24,11 @@ public class Numeros {
         }
 
         System.out.println("\n\nVerificación de número mayor o igual a cero:");
-        Scanner scanner = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int numero;
         do {
             System.out.print("Ingrese un número mayor o igual a cero: ");
-            numero = scanner.nextInt();
+            numero = Integer.parseInt(br.readLine());
         } while (numero < 0);
         System.out.println("Número ingresado: " + numero);
     }
